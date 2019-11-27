@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge Step 286</title>
+    </head>
+    <body>
+        <div>
+            <h2>Learning on how to incorporate AJAX for the latest content:</h2>
+            <div class='content' id="content">
+                <input type="button" value="Click here for more content" onclick="getMikeImage();"/>
+            </div>
+        <script type="text/javascript">
+        
+        function getMikeImage() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("mike").innerHTML = 
+                    this.responseText;
+                }
+            };
+            xhttp.open("GET", "mike_image.html", true);
+            xhttp.send();
+        
+        }
+        </script>
+        <p id="mike"></p>
+
+
+        </div>
+    </body>
+</html>
